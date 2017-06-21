@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="WPPhotoEditor.UControls.UCPenTool"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:FieldModifier="private"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480" Width="90" Height="90">
+    
+    <Grid x:Name="LayoutRoot" Height="90" Width="90" >
+		<Border x:Name="brMain" BorderThickness="1" Margin="5" Width="80" Height="80" Background="White"/>
+		<Border x:Name="brFrame" Margin="-2,-2,0,0" BorderBrush="#FF59A5FF" BorderThickness="2" Visibility="Collapsed">
+			<Grid Margin="2,-1,-2,1">
+				<Path Data="M261,1 L479.356,184.047 L480,1" Fill="#FF59A5FF" HorizontalAlignment="Right" Height="45.306" Margin="0,0,0.568,-0.306" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Top" Width="54.432"/>
+				<Path Data="M369,44 L410.195,85.1947" Fill="#FFF5F4F4" HorizontalAlignment="Right" Height="12.842" Margin="0,10.285,16.506,0" Stretch="Fill" Stroke="White" UseLayoutRounding="False" VerticalAlignment="Top" Width="12.841" StrokeThickness="4"/>
+				<Path Data="M411.195,86.195 L478.963,18.4272" Fill="#FFF5F4F4" HorizontalAlignment="Right" Height="21.358" Margin="0,1.769,1.911,0" Stretch="Fill" Stroke="White" UseLayoutRounding="False" VerticalAlignment="Top" Width="21.262" StrokeThickness="4"/>
+			</Grid>
+		</Border>
+	</Grid>
+</UserControl>

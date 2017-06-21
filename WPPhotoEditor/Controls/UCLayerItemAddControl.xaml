@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="WPPhotoEditor.Controls.UCLayerItemAddControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+     xmlns:Coding4Fun_Phone_Controls="clr-namespace:Coding4Fun.Phone.Controls;assembly=Coding4Fun.Phone.Controls"	
+	mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    Height="123" Width="88">
+
+    <Border x:Name="LayoutRoot" Margin="0" BorderThickness="1">
+    	<Coding4Fun_Phone_Controls:RoundButton x:Name="rbtLayerAdd" Content="画刷" VerticalAlignment="Center" ImageSource="/Assets/AppBar/add.png" HorizontalAlignment="Center" Height="54" BorderBrush="{x:Null}" Foreground="White" Margin="0"/>        
+    </Border>
+</UserControl>

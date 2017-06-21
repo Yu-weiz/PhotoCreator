@@ -1,0 +1,100 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="WPPhotoEditor.Views.OptionPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+		<phone:PhoneApplicationPage.Resources>
+		<Style x:Key="ButtonStyleNone" TargetType="Button">
+			<Setter Property="Background" Value="{x:Null}"/>
+			<Setter Property="BorderBrush" Value="{x:Null}"/>
+			<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
+			<Setter Property="BorderThickness" Value="{StaticResource PhoneBorderThickness}"/>
+			<Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilySemiBold}"/>
+			<Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMedium}"/>
+			<Setter Property="Padding" Value="10,5,10,6"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Grid Background="Transparent">
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="MouseOver"/>
+									<VisualState x:Name="Pressed"/>	
+									<VisualState x:Name="Disabled"/>										
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<Border x:Name="ButtonBackground" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="0" Margin="{StaticResource PhoneTouchTargetOverhang}">
+								<ContentControl x:Name="ContentContainer" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+							</Border>
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</phone:PhoneApplicationPage.Resources>
+
+    <!--LayoutRoot 是包含所有页面内容的根网格-->
+    <Grid x:Name="LayoutRoot" Background="White">
+        <!--枢轴控件-->
+        <phone:Pivot Title=" " Foreground="Black">
+            <!--枢轴项一-->
+            <phone:PivotItem Header="{Binding LocalizedResource.OPGeneral, Source={StaticResource LocalizedStrings}}">
+                <StackPanel>
+                    <Grid Height="97">
+                        <TextBlock HorizontalAlignment="Left" Height="36" Margin="34,61,0,0" TextWrapping="Wrap" Text="{Binding LocalizedResource.MTheBackground, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Width="306" Foreground="#FFB8B8B8"/>
+                        <Button x:Name="btnChange" Click="btnChange_Click" Content="{Binding LocalizedResource.MChange, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" Style="{StaticResource ButtonStyleNone}" VerticalAlignment="Top" Foreground="Black" FontFamily="Segoe WP" FontSize="37.333"/>
+                    </Grid>
+                   </StackPanel>
+            </phone:PivotItem>
+
+            <phone:PivotItem Header="{Binding LocalizedResource.OPAbout, Source={StaticResource LocalizedStrings}}">
+            	<ScrollViewer>
+            		<Grid Height="623" Width="456">
+            			<StackPanel>
+            				<Canvas Height="119" Margin="10,0,0,0">
+            					<Button x:Name="btnWeAreHere" Content="{Binding LocalizedResource.OPWeAreHere, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" Style="{StaticResource ButtonStyleNone}" VerticalAlignment="Top" Foreground="Black" FontFamily="Segoe WP" FontSize="37.333" Height="100" Width="252" Canvas.Left="107"/>
+            					<TextBlock HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="131" Foreground="#FFB8B8B8" Canvas.Left="131" Canvas.Top="74" Text="Yu-weiz"/>
+            					<Image Height="119" Width="119" Source="/Assets/Yu-weizLogoSmall.jpg"/>
+            				</Canvas>
+            				<Canvas Height="119" Margin="-9,0,0,0">
+            					<Button x:Name="btnReview" Content="{Binding LocalizedResource.MEncourageUs, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" Style="{StaticResource ButtonStyleNone}" VerticalAlignment="Top" Foreground="Black" FontFamily="Segoe WP" FontSize="37.333" Height="100"/>
+            					<TextBlock HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="{Binding LocalizedResource.MGiveMeAPraise, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Width="306" Foreground="#FFB8B8B8" Canvas.Left="25" Canvas.Top="68"/>
+            				</Canvas>
+            				<Canvas x:Name="cavRemoveAds" Height="119" Margin="-9,0,0,0">
+            					<TextBlock HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="{Binding LocalizedResource.OPBuyTheFullVersionDetail, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Width="414" Foreground="#FFB8B8B8" Canvas.Left="26" Canvas.Top="70"/>
+            					<Button x:Name="btnBuy" HorizontalAlignment="Left" Style="{StaticResource ButtonStyleNone}" VerticalAlignment="Top" Foreground="Black" FontFamily="Segoe WP" FontSize="37.333" Height="100" Width="455" Canvas.Left="-4">
+            						<TextBlock HorizontalAlignment="Left" Height="55" TextWrapping="Wrap" VerticalAlignment="Top" Width="431" Foreground="Black" Text="{Binding LocalizedResource.OPBuyTheFullVersion, Source={StaticResource LocalizedStrings}}"/>
+            					</Button>
+            				</Canvas>
+            				<Canvas x:Name="cavTryTheProOne" Height="161" Margin="-9,0,0,0">
+            					<Button x:Name="btnRevmoeAds" Content="{Binding LocalizedResource.OPRemoveAds, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" Style="{StaticResource ButtonStyleNone}" VerticalAlignment="Top" Foreground="Black" FontFamily="Segoe WP" FontSize="37.333" Height="84"/>
+            					<TextBox x:Name="txtOrderNumber" Height="77" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="74" Width="341" BorderBrush="#BF494949"/>
+            					<Button x:Name="btnOKRemove" Content="OK" Height="77" Canvas.Left="331" Canvas.Top="74" Width="134" Background="White" BorderBrush="Black" Foreground="#FF060606"/>
+            					<Grid x:Name="grOrderNumberTip" Height="51" Canvas.Left="17" Canvas.Top="88" Width="326" Background="#00000000">
+            						<TextBlock x:Name="tDueDate" TextWrapping="Wrap" Text="License Code" Foreground="#FF919191" Margin="17,8,0,0"/>
+            					</Grid>
+            					<ProgressBar x:Name="proBarRemoving" Height="40" Canvas.Left="17" Canvas.Top="144" Width="448" IsIndeterminate="True" Visibility="Collapsed"/>
+            				</Canvas>            			
+            			</StackPanel>
+            			<TextBlock x:Name="tMoreApps" Height="49" Margin="0,0,22,41" TextWrapping="Wrap" Text="{Binding LocalizedResource.OPMoreApps, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="166" TextDecorations="Underline"  FontSize="32" />
+            		</Grid>
+            	</ScrollViewer>
+            </phone:PivotItem>
+            <!--枢轴项一-->
+
+            <!--枢轴项二-->
+        </phone:Pivot>
+    </Grid>
+    
+</phone:PhoneApplicationPage>

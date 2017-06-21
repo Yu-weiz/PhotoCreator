@@ -1,0 +1,164 @@
+﻿<UserControl x:Class="WPPhotoEditor.Controls.UCPenStyleBoxControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+     xmlns:Coding4Fun_Phone_Controls="clr-namespace:Coding4Fun.Phone.Controls;assembly=Coding4Fun.Phone.Controls"	
+
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}" d:DesignWidth="480" Height="800">
+    
+    <StackPanel x:Name="LayoutRoot" Margin="0">
+        <ListBox x:Name="lsBrushs" Height="79" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled" Background="White" VerticalAlignment="Top">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel  Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <Button x:Name="btDefaultPen" Content="" Height="80" Width="80" BorderBrush="Red" BorderThickness="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Uniform" ImageSource="/Assets/Brush/1.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btBrStar" Content="" Height="80" Width="80" Margin="-20,0,0,0" BorderBrush="#FFC3ABA0" BorderThickness="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/Brush/2.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btBrGrass" Content="" Height="80" Width="80" Margin="-17,0,0,0" BorderBrush="#FFC3ABA0" BorderThickness="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/Brush/3.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btBrGrape" Content="" Height="80" Width="80" Margin="-17,0,0,0" BorderBrush="#FFC3ABA0" BorderThickness="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/Brush/4.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btBrHand" Content="" Height="80" Width="80" Margin="-17,0,0,0" BorderBrush="#FFC3ABA0" BorderThickness="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/Brush/5.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btBrFoot" Content="" Height="80" Width="80" Margin="-17,0,0,0" BorderBrush="#FFC3ABA0" BorderThickness="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/Brush/6.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btBrFootR" Content="" Height="80" Width="80" Margin="-17,0,0,0" BorderBrush="#FFC3ABA0" BorderThickness="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/Brush/7.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btBrBuffer" Content="" Height="80" Width="80" Margin="-17,0,0,0" BorderBrush="#FFC3ABA0" BorderThickness="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/Brush/8.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btBrMusic" Content="" Height="80" Width="80" Margin="-17,0,0,0" BorderBrush="#FFC3ABA0" BorderThickness="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/Brush/9.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btBrFlower" Content="" Height="80" Width="80" Margin="-17,0,0,0" BorderBrush="#FFC3ABA0" BorderThickness="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/Brush/10.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btBrAmFoot" Content="" Height="80" Width="80" Margin="-17,0,0,0" BorderBrush="#FFC3ABA0" BorderThickness="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/Brush/11.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btBrTree" Content="" Height="80" Width="80" Margin="-17,0,0,0" BorderBrush="#FFC3ABA0" BorderThickness="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/Brush/12.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btBrPoint" Content="" Height="80" Width="80" Margin="-10,0,0,0" BorderBrush="#FFC3ABA0" BorderThickness="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/Brush/13.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btBrPoint1" Content="" Height="80" Width="80" Margin="-10,0,0,0" BorderBrush="#FFC3ABA0" BorderThickness="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/Brush/14.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btBrPoint2" Content="" Height="80" Width="80" Margin="-10,0,0,0" BorderBrush="#FFC3ABA0" BorderThickness="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/Brush/15.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btBrPoint21" Content="" Height="80" Width="80" Margin="-10,0,0,0" BorderBrush="#FFC3ABA0" BorderThickness="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/Brush/16.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btBrPoint22" Content="" Height="80" Width="80" Margin="-10,0,0,0" BorderBrush="#FFC3ABA0" BorderThickness="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/Brush/17.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btBrPoint23" Content="" Height="80" Width="80" Margin="-10,0,0,0" BorderBrush="#FFC3ABA0" BorderThickness="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/Brush/18.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btBrPoint24" Content="" Height="80" Width="80" Margin="-10,0,0,0" BorderBrush="#FFC3ABA0" BorderThickness="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/Brush/19.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btBrPoint25" Content="" Height="80" Width="80" Margin="-10,0,0,0" BorderBrush="#FFC3ABA0" BorderThickness="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/Brush/20.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btBrPoint26" Content="" Height="80" Width="80" Margin="-10,0,0,0" BorderBrush="#FFC3ABA0" BorderThickness="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/Brush/21.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btBrPoint27" Content="" Height="80" Width="80" Margin="-10,0,0,0" BorderBrush="#FFC3ABA0" BorderThickness="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/Brush/22.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btBrPoint28" Content="" Height="80" Width="80" Margin="-10,0,0,0" BorderBrush="#FFC3ABA0" BorderThickness="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/Brush/23.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btBrPoint29" Content="" Height="80" Width="80" Margin="-10,0,0,0" BorderBrush="#FFC3ABA0" BorderThickness="1">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Assets/Brush/24.png"/>
+                </Button.Background>
+            </Button>         
+        </ListBox>
+        <Grid Height="70" Background="#F2FFFFFF">            <TextBlock HorizontalAlignment="Left" Margin="10,18,0,0" TextWrapping="Wrap" Text="{Binding LocalizedResource.APSize, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Foreground="#FF662804"/>
+            <Slider x:Name="slSize" ValueChanged="slSize_ValueChanged" HorizontalAlignment="Left" Height="94" Margin="86,0,0,-24" VerticalAlignment="Top" Width="374" BorderBrush="{x:Null}" Minimum="20" Maximum="200" SmallChange="2" LargeChange="10" Value="50" Background="#FFFFC4A8" Foreground="#FF662804"/>
+        </Grid>
+        <Grid x:Name="grTransparency"  Height="70" Background="#F2FFFFFF">            <TextBlock HorizontalAlignment="Left" Margin="10,17,0,0" TextWrapping="Wrap" Text="{Binding LocalizedResource.PSPTransparency, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Foreground="#FF662804"/>
+        	<Slider x:Name="slTransparency" ValueChanged="slSize_ValueChanged" HorizontalAlignment="Left" Height="94" Margin="83,0,0,-24" VerticalAlignment="Top" Width="377" BorderBrush="{x:Null}" Minimum="20" Maximum="200" SmallChange="2" LargeChange="10" Value="50" Foreground="#FF662804" Background="#FFFFC4A8"/>
+        </Grid>
+        <Grid x:Name="grOpacity"  Height="70" Background="#F2FFFFFF">            <TextBlock HorizontalAlignment="Left" Margin="10,17,0,0" TextWrapping="Wrap" Text="{Binding LocalizedResource.PSPOpacity, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Foreground="#FF662804"/>
+        	<Slider x:Name="slOpacity" ValueChanged="slSize_ValueChanged" HorizontalAlignment="Left" Height="94" Margin="83,0,0,-24" VerticalAlignment="Top" Width="377" BorderBrush="{x:Null}" Minimum="20" Maximum="200" SmallChange="2" LargeChange="10" Value="50" Foreground="#FF662804" Background="#FFFFC4A8"/>
+        </Grid>
+        <Canvas x:Name="cavIsEraser" Height="72" Margin="0" Background="#F2FFFFFF">
+            <CheckBox x:Name="chkIsEraser" Click="chkIsEraser_Click" Content="{Binding LocalizedResource.tOriginal, Source={StaticResource LocalizedStrings}}" BorderBrush="#FF662804" Foreground="#FF662804"  Background="#FF8D3400" Width="480" Canvas.Top="-6"/>
+        	<Coding4Fun_Phone_Controls:RoundButton x:Name="rbtColor" Content="画刷" Click="rbtColor_Click" VerticalAlignment="Top" ImageSource="/Assets/AppBar/ColorBoard.png" HorizontalAlignment="Right" Height="54" BorderBrush="{x:Null}" Foreground="White" Background="#FF662804" Canvas.Left="398" Canvas.Top="4"/>
+        	<Path Data="M2.5,283 L474.75,283" Fill="Black" HorizontalAlignment="Left" Height="1" Stretch="Fill" Stroke="#FF7A0A0A" UseLayoutRounding="False" Width="473.25" Canvas.Left="2.5" VerticalAlignment="Top" Margin="0,-19,0,0" Canvas.Top="87"/>
+
+        </Canvas>
+        <Canvas x:Name="cavIsOpacity" Height="72" Margin="0" Background="#F2FFFFFF">
+            <CheckBox x:Name="chkIsOpacity" Click="chkIsOpacity_Click" Content="{Binding LocalizedResource.PSPOpaquePen, Source={StaticResource LocalizedStrings}}" BorderBrush="#FF662804" Foreground="#FF662804"  Background="#FF8D3400" Width="480" Canvas.Top="-6"/>
+               <Path Data="M2.5,283 L474.75,283" Fill="Black" HorizontalAlignment="Left" Height="1" Stretch="Fill" Stroke="#FF7A0A0A" UseLayoutRounding="False" Width="473.25" Canvas.Left="2.5" VerticalAlignment="Top" Margin="0,-19,0,0" Canvas.Top="87"/>
+
+        </Canvas>
+               <ADControls:AdUltimateBar x:Name="adUltimateBar" xmlns:ADControls="clr-namespace:Yuweiz.Phone.Ad.Controls;assembly=Yuweiz.Phone.Ad" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="Collapsed"/>
+
+    </StackPanel>
+</UserControl>

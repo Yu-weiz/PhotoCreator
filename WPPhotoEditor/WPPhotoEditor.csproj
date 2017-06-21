@@ -1,0 +1,523 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B8704AE4-0924-4ACE-B5E2-622F76D771D1}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WPPhotoEditor</RootNamespace>
+    <AssemblyName>WPPhotoEditor</AssemblyName>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>zh-CN</SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>WPPhotoEditor_$(Configuration)_$(Platform).xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>WPPhotoEditor.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <ExpressionBlendVersion>5.0.40218.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppSession.cs" />
+    <Compile Include="Common\LicenseManage.cs" />
+    <Compile Include="Common\Media\BrushFactory.cs" />
+    <Compile Include="Common\Media\Tools\DrawTool.cs" />
+    <Compile Include="Common\Media\Tools\ToolAbstract.cs" />
+    <Compile Include="Common\Media\Tools\TransformTool.cs" />
+    <Compile Include="Common\Models\FilterItemModel.cs" />
+    <Compile Include="Common\Models\SettingsModel.cs" />
+    <Compile Include="Controls\GuideTipPage.xaml.cs">
+      <DependentUpon>GuideTipPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IBox.cs" />
+    <Compile Include="Controls\UCBrushStyleBox.xaml.cs">
+      <DependentUpon>UCBrushStyleBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCLayerItemAddControl.xaml.cs">
+      <DependentUpon>UCLayerItemAddControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCLayerItemControl.xaml.cs">
+      <DependentUpon>UCLayerItemControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCLayersBoxControl.xaml.cs">
+      <DependentUpon>UCLayersBoxControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCPenStyleBoxControl.xaml.cs">
+      <DependentUpon>UCPenStyleBoxControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OLD\ColorChoosePhonePage.xaml.cs" />
+    <Compile Include="OLD\Entity\BrushEntity.cs" />
+    <Compile Include="OLD\Entity\LayerState.cs" />
+    <Compile Include="OLD\Entity\SettingState.cs" />
+    <Compile Include="OLD\Entity\ToolStyle.cs" />
+    <Compile Include="OLD\MainPage.xaml.cs" />
+    <Compile Include="OLD\SettingPhonePage.xaml.cs" />
+    <Compile Include="OLD\UControl\UCColorChooser.xaml.cs" />
+    <Compile Include="OLD\Utility\UnReDoManage.cs" />
+    <Compile Include="OLD\Utility\UtilityFunction.cs" />
+    <Compile Include="Resources\AppResources.zh-CN1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.zh-CN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\LocalizedStrings.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Media\LayerBase.cs" />
+    <Compile Include="Common\Media\LayerCanvaslBase.cs" />
+    <Compile Include="Controls\UCCutBorder.xaml.cs">
+      <DependentUpon>UCCutBorder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCFilterItem.xaml.cs">
+      <DependentUpon>UCFilterItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCLayerToolBar.xaml.cs">
+      <DependentUpon>UCLayerToolBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCPenTool.xaml.cs">
+      <DependentUpon>UCPenTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Models\FilterItem.cs" />
+    <Compile Include="Common\AffectPageViewModel.cs" />
+    <Compile Include="Common\PEHistoryItem.cs" />
+    <Compile Include="Common\PEOperationType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\AppResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LayersBoxControler.cs" />
+    <Compile Include="Controls\PoxEventArgs.cs" />
+    <Compile Include="Controls\UCLayerItem.xaml.cs">
+      <DependentUpon>UCLayerItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCLayersBox.xaml.cs">
+      <DependentUpon>UCLayersBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Models\BrushSamples.cs" />
+    <Compile Include="Common\Utility.cs" />
+    <Compile Include="StartupMainPage.xaml.cs">
+      <DependentUpon>StartupMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AffectPage.xaml.cs">
+      <DependentUpon>AffectPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BrushPickerPage.xaml.cs">
+      <DependentUpon>BrushPickerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ColorChooserPage.xaml.cs">
+      <DependentUpon>ColorChooserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ColorPickerPage.xaml.cs">
+      <DependentUpon>ColorPickerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditBasePage.xaml.cs">
+      <DependentUpon>EditBasePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CollagePage.xaml.cs">
+      <DependentUpon>CollagePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditPage.xaml.cs">
+      <DependentUpon>EditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MovieFramePage.xaml.cs">
+      <DependentUpon>MovieFramePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OptionPage.xaml.cs">
+      <DependentUpon>OptionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingPage.xaml.cs">
+      <DependentUpon>SettingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppSession.Config.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Resource Include="Controls\Style.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="Controls\GuideTipPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\UCBrushStyleBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\UCLayerItemAddControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\UCLayerItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\UCLayersBoxControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\UCPenStyleBoxControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\UCCutBorder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\UCFilterItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\UCLayerItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\UCLayersBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\UCLayerToolBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\UCPenTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OLD\ColorChoosePhonePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OLD\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OLD\SettingPhonePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OLD\UControl\UCColorChooser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StartupMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AffectPage.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BrushPickerPage.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ColorChooserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ColorPickerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditBasePage.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CollagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MovieFramePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OptionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Help\Nokia Imaging SDK.chm" />
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\AppBar\appbar.save.rest.png" />
+    <Content Include="Assets\AppBar\BrushTool_Effect.png" />
+    <Content Include="Assets\AppBar\Clear.png" />
+    <Content Include="Assets\AppBar\clipboard_cut_icon.png" />
+    <Content Include="Assets\AppBar\cropping.png" />
+    <Content Include="Assets\AppBar\cursor_hand_icon.png" />
+    <Content Include="Assets\AppBar\delete.png" />
+    <Content Include="Assets\AppBar\effectFilter.png" />
+    <Content Include="Assets\AppBar\eyeVisibility.png" />
+    <Content Include="Assets\AppBar\feature.settings.png" />
+    <Content Include="Assets\AppBar\Google_Translate_2.png" />
+    <Content Include="Assets\AppBar\like.png" />
+    <Content Include="Assets\AppBar\magic_wand_icon.png" />
+    <Content Include="Assets\AppBar\merge.png" />
+    <Content Include="Assets\AppBar\add.png" />
+    <Content Include="Assets\AppBar\BrushTool.png" />
+    <Content Include="Assets\AppBar\ColorBoard.png" />
+    <Content Include="Assets\AppBar\Layers.png" />
+    <Content Include="Assets\AppBar\overflowdots.png" />
+    <Content Include="Assets\AppBar\Pencail.png" />
+    <Content Include="Assets\AppBar\picture.png" />
+    <Content Include="Assets\AppBar\Redo.png" />
+    <Content Include="Assets\AppBar\save.png" />
+    <Content Include="Assets\AppBar\Undo.png" />
+    <Content Include="Assets\AppBar\words.png" />
+    <Content Include="Assets\AppBar\WPFlip.png" />
+    <Content Include="Assets\AppBar\WPReSize.png" />
+    <Content Include="Assets\Brush\10.png" />
+    <Content Include="Assets\Brush\11.png" />
+    <Content Include="Assets\Brush\12.png" />
+    <Content Include="Assets\Brush\13.png" />
+    <Content Include="Assets\Brush\14.png" />
+    <Content Include="Assets\Brush\15.png" />
+    <Content Include="Assets\Brush\16.png" />
+    <Content Include="Assets\Brush\17.png" />
+    <Content Include="Assets\Brush\18.png" />
+    <Content Include="Assets\Brush\19.png" />
+    <Content Include="Assets\Brush\2.png" />
+    <Content Include="Assets\Brush\20.png" />
+    <Content Include="Assets\Brush\21.png" />
+    <Content Include="Assets\Brush\22.png" />
+    <Content Include="Assets\Brush\23.png" />
+    <Content Include="Assets\Brush\24.png" />
+    <Content Include="Assets\Brush\3.png" />
+    <Content Include="Assets\Brush\4.png" />
+    <Content Include="Assets\Brush\1.png" />
+    <Content Include="Assets\AppBar\download.png" />
+    <Content Include="Assets\AppBar\upload.png" />
+    <Content Include="Assets\Image\SketchFlipCycleTileLargeZH.png" />
+    <Content Include="Assets\Image\SketchFlipCycleTileLarge.jpg" />
+    <Content Include="Assets\PhotoEditorLogoPro.png" />
+    <Content Include="Assets\Tiles\Collage.png" />
+    <Content Include="Assets\Tiles\Affect.png" />
+    <Content Include="Assets\Tiles\OLDLogo.jpg" />
+    <Content Include="Assets\Tiles\Paint.png" />
+    <Content Include="Assets\UI\20141105030720286.jpg" />
+    <Content Include="Assets\UI\Affect.png" />
+    <Content Include="Assets\UI\ColorBoard.png" />
+    <Content Include="Assets\UI\ideas.png" />
+    <Content Include="Assets\UI\IMG_0629.jpg" />
+    <Content Include="Assets\UI\pictures.png" />
+    <Content Include="Assets\UI\T4Ljrh0in9.jpg" />
+    <Content Include="Assets\UI\Video_GoogleDocs.png" />
+    <Content Include="Assets\Yu-weizLogoSmall.jpg" />
+    <Content Include="VersionChange.txt" />
+    <Resource Include="OLD\Brush\brAmFoot.png" />
+    <Resource Include="OLD\Brush\brBuffer.png" />
+    <Resource Include="OLD\Brush\brFlower.png" />
+    <Resource Include="OLD\Brush\brFoot.png" />
+    <Resource Include="OLD\Brush\brFootR.png" />
+    <Resource Include="OLD\Brush\brGrape.png" />
+    <Resource Include="OLD\Brush\brGrass.png" />
+    <Resource Include="OLD\Brush\brHand.png" />
+    <Resource Include="OLD\Brush\brMusic.png" />
+    <Resource Include="OLD\Brush\brPenICO.png" />
+    <Resource Include="OLD\Brush\brPoint.png" />
+    <Resource Include="OLD\Brush\brStar.png" />
+    <Resource Include="OLD\Brush\brThinking.png" />
+    <Resource Include="OLD\Brush\brTree.png" />
+    <Resource Include="OLD\Brush\WbmpOpacity.png" />
+    <Resource Include="OLD\ICO\appbar.add.rest.png" />
+    <Resource Include="OLD\ICO\appbar.back.rest.png" />
+    <Resource Include="OLD\ICO\appbar.cancel.rest.png" />
+    <Resource Include="OLD\ICO\appbar.delete.rest.png" />
+    <Resource Include="OLD\ICO\appbar.edit.rest.png" />
+    <Resource Include="OLD\ICO\appbar.feature.settings.rest.png" />
+    <Resource Include="OLD\ICO\appbar.next.rest.png" />
+    <Resource Include="OLD\ICO\appbar.refresh.rest.png" />
+    <Resource Include="OLD\ICO\appbar.save.rest.png" />
+    <Resource Include="OLD\ICO\Color.png" />
+    <Resource Include="OLD\ICO\ColorOr.png" />
+    <Resource Include="OLD\ICO\imagic.png" />
+    <Resource Include="OLD\ICO\layers.png" />
+    <Resource Include="OLD\ICO\Opacity.png" />
+    <Resource Include="OLD\ICO\rgb.png" />
+    <Resource Include="OLD\ICO\transParent.png" />
+    <Resource Include="OLD\ICO\WPDrawingClip.png" />
+    <Resource Include="OLD\ICO\WPDrawingEraser.png" />
+    <Resource Include="OLD\ICO\WPDrawingNew.png" />
+    <Resource Include="OLD\ICO\WPDrawingRoate.png" />
+    <Resource Include="OLD\ICO\WPDrawingZoom.png" />
+    <Resource Include="OLD\ICO\WPPEEraser.png" />
+    <Content Include="Assets\Brush\6.png" />
+    <Content Include="Assets\Brush\7.png" />
+    <Content Include="Assets\Brush\8.png" />
+    <Content Include="Assets\Brush\9.png" />
+    <Content Include="Assets\Logo.png" />
+    <Resource Include="Assets\Image\Eye.png" />
+    <Resource Include="Assets\Image\PhotoEditorDefault480X800.png" />
+    <Resource Include="Assets\Image\Trash.png" />
+    <Content Include="Assets\Brush\5.png" />
+    <Content Include="Assets\Image\foreground.png" />
+    <Content Include="Assets\Tiles\FlipCycleTileLarge1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AppResources.zh-CN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>AppResources.zh-CN1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AppResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Coding4Fun.Phone.Controls">
+      <HintPath>..\..\Blend 4\WPPhotoEditor\WPPhotoEditor\Bin\Release\Coding4Fun.Phone.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Coding4Fun.Toolkit.Controls">
+      <HintPath>..\..\..\..\..\..\Projects\Windows phone\DLL\Coding4Fun.Toolkit (Windows Phone 8)\Coding4Fun.Toolkit.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+      <HintPath>..\..\..\..\..\..\Projects\Windows phone\DLL\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Nokia.Graphics.Imaging.Managed">
+      <HintPath>..\packages\NokiaImagingSDK.1.1.177\lib\wp8\Nokia.Graphics.Imaging.Managed.dll</HintPath>
+    </Reference>
+    <Reference Include="SOMAWP8, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Downloads\Smaato SDK for WP8 - V1.5.0.6 no location\SOMAWP8.dll</HintPath>
+    </Reference>
+    <Reference Include="UmengAnalyticsWP8">
+      <HintPath>..\..\..\SampleCode\Windows Phone\UmengAnalyticsWP\WP8\UmengAnalyticsWP8.dll</HintPath>
+    </Reference>
+    <Reference Include="WriteableBitmapExWinPhone">
+      <HintPath>..\..\..\..\..\..\Projects\Windows phone\DLL\WriteableBitmapEx_v1.0.9.0\WindowsPhone8\WriteableBitmapExWinPhone.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Yu-weiz\Yuweiz.Phone.Ad\Yuweiz.Phone.Ad.csproj">
+      <Project>{44d4c920-a8a5-49b4-9563-283aa4c4f081}</Project>
+      <Name>Yuweiz.Phone.Ad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yu-weiz\Yuweiz.Phone\Yuweiz.Phone.csproj">
+      <Project>{992eb971-6d76-4ea3-8798-a055e6e9edf7}</Project>
+      <Name>Yuweiz.Phone</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+  <Import Project="..\packages\NokiaImagingSDK.1.1.177\build\wp8\NokiaImagingSDK.targets" Condition="Exists('..\packages\NokiaImagingSDK.1.1.177\build\wp8\NokiaImagingSDK.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。启用“NuGet 程序包还原”可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NokiaImagingSDK.1.1.177\build\wp8\NokiaImagingSDK.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NokiaImagingSDK.1.1.177\build\wp8\NokiaImagingSDK.targets'))" />
+  </Target>
+</Project>

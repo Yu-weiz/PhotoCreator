@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="APChangeThePicture" xml:space="preserve">
+    <value>Change the picture</value>
+  </data>
+  <data name="APCrop" xml:space="preserve">
+    <value>Crop</value>
+  </data>
+  <data name="APCropProportion" xml:space="preserve">
+    <value>Crop Proportion</value>
+  </data>
+  <data name="APFlipHorizontal" xml:space="preserve">
+    <value>Flip Horizontal</value>
+  </data>
+  <data name="APFlipVertical" xml:space="preserve">
+    <value>Flip Vertical</value>
+  </data>
+  <data name="APHeight" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="APKeepTheProportion" xml:space="preserve">
+    <value>Keep the proportion</value>
+  </data>
+  <data name="APNewSize" xml:space="preserve">
+    <value>New Size</value>
+  </data>
+  <data name="APOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="APProportion" xml:space="preserve">
+    <value>Proportion</value>
+  </data>
+  <data name="APResume" xml:space="preserve">
+    <value>Resume</value>
+  </data>
+  <data name="APRotate" xml:space="preserve">
+    <value>Rotate</value>
+  </data>
+  <data name="APSize" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="APWidth" xml:space="preserve">
+    <value>Width</value>
+  </data>
+  <data name="CPAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="CPDrag" xml:space="preserve">
+    <value>Drag</value>
+  </data>
+  <data name="CPPen" xml:space="preserve">
+    <value>Pen</value>
+  </data>
+  <data name="CPRedo" xml:space="preserve">
+    <value>Redo</value>
+  </data>
+  <data name="CPSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="CPSetting" xml:space="preserve">
+    <value>Setting</value>
+  </data>
+  <data name="CPStyle" xml:space="preserve">
+    <value>Style</value>
+  </data>
+  <data name="CPUndo" xml:space="preserve">
+    <value>Undo</value>
+  </data>
+  <data name="MAffect" xml:space="preserve">
+    <value>Affect</value>
+  </data>
+  <data name="MChange" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="MClassical" xml:space="preserve">
+    <value>Classical</value>
+  </data>
+  <data name="MCollage" xml:space="preserve">
+    <value>Collage</value>
+  </data>
+  <data name="MEncourageUs" xml:space="preserve">
+    <value>Encourage us</value>
+  </data>
+  <data name="MGiveMeAPraise" xml:space="preserve">
+    <value>give me a praise</value>
+  </data>
+  <data name="MMore" xml:space="preserve">
+    <value>More</value>
+  </data>
+  <data name="MPaint" xml:space="preserve">
+    <value>Paint</value>
+  </data>
+  <data name="MPinTips" xml:space="preserve">
+    <value>You can hold and pin to the start!</value>
+  </data>
+  <data name="MTheBackground" xml:space="preserve">
+    <value>the background</value>
+  </data>
+  <data name="MUseDefaultBackground" xml:space="preserve">
+    <value>Use default background</value>
+  </data>
+  <data name="PPLayers" xml:space="preserve">
+    <value>Layers</value>
+  </data>
+  <data name="PSPColorPen" xml:space="preserve">
+    <value>Color Pen</value>
+  </data>
+  <data name="PSPOpacity" xml:space="preserve">
+    <value>Opacity</value>
+  </data>
+  <data name="PSPOpaquePen" xml:space="preserve">
+    <value>Opaque Pen</value>
+  </data>
+  <data name="PSPOriginalPen" xml:space="preserve">
+    <value>Original Pen</value>
+  </data>
+  <data name="PSPPenStyle" xml:space="preserve">
+    <value>Pen Style</value>
+  </data>
+  <data name="PSPTransparency" xml:space="preserve">
+    <value>Transparency</value>
+  </data>
+  <data name="PSPTransparentPen" xml:space="preserve">
+    <value>Transparent Pen</value>
+  </data>
+  <data name="ResourceFlowDirection" xml:space="preserve">
+    <value>LeftToRight</value>
+  </data>
+  <data name="ResourceLanguage" xml:space="preserve">
+    <value>zh-cn</value>
+  </data>
+  <data name="SPBackground" xml:space="preserve">
+    <value>Background</value>
+  </data>
+  <data name="SPColor" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="SPFill" xml:space="preserve">
+    <value>Fill</value>
+  </data>
+  <data name="SPFit" xml:space="preserve">
+    <value>Fit</value>
+  </data>
+  <data name="SPNone" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="SPOFF" xml:space="preserve">
+    <value>OFF</value>
+  </data>
+  <data name="SPON" xml:space="preserve">
+    <value>ON</value>
+  </data>
+  <data name="SPOthers" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="SPPhoto" xml:space="preserve">
+    <value>Photo</value>
+  </data>
+  <data name="SPSavedSize" xml:space="preserve">
+    <value>Saved size</value>
+  </data>
+  <data name="SPShowHelp" xml:space="preserve">
+    <value>Show help</value>
+  </data>
+  <data name="SPSize" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="SPStretch" xml:space="preserve">
+    <value>Stretch</value>
+  </data>
+  <data name="SPUniform" xml:space="preserve">
+    <value>Unifrom</value>
+  </data>
+  <data name="Angle" xml:space="preserve">
+    <value>Angle</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ChangeToBrush" xml:space="preserve">
+    <value>Have change to brush model!</value>
+  </data>
+  <data name="ChangeToEraser" xml:space="preserve">
+    <value>Have change to eraser model!</value>
+  </data>
+  <data name="Feather" xml:space="preserve">
+    <value>Hardness</value>
+  </data>
+  <data name="HadSaveTo" xml:space="preserve">
+    <value>Image saved to saved pictures album!</value>
+  </data>
+  <data name="HaveNoLayer" xml:space="preserve">
+    <value>Have no Layer to save!</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OnlyLayer" xml:space="preserve">
+    <value>It  only supports 5 layers!</value>
+  </data>
+  <data name="SavedSize" xml:space="preserve">
+    <value>The size of the saved:</value>
+  </data>
+  <data name="SaveFailed" xml:space="preserve">
+    <value>Save Failed!</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>Setting</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="Transparency" xml:space="preserve">
+    <value>Transparency</value>
+  </data>
+  <data name="tBSBoardProportion" xml:space="preserve">
+    <value>Canva Size:</value>
+  </data>
+  <data name="tLeave" xml:space="preserve">
+    <value>Leave</value>
+  </data>
+  <data name="tLeaveContent" xml:space="preserve">
+    <value>Do you really want to leave?</value>
+  </data>
+  <data name="tDelLayerConfirm" xml:space="preserve">
+    <value>Do you really want to delete selected layer?</value>
+  </data>
+  <data name="tSpacing" xml:space="preserve">
+    <value>Spacing</value>
+  </data>
+  <data name="tOpacity" xml:space="preserve">
+    <value>Opacity</value>
+  </data>
+  <data name="tMergeLayers" xml:space="preserve">
+    <value>Merge Layers?</value>
+  </data>
+  <data name="tDefaultSize" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="tBackgroundColor" xml:space="preserve">
+    <value>Background Color</value>
+  </data>
+  <data name="tColor" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="tOriginal" xml:space="preserve">
+    <value>Original</value>
+  </data>
+  <data name="tTransparency" xml:space="preserve">
+    <value>Transparency</value>
+  </data>
+  <data name="GlCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="GlDoYouWant" xml:space="preserve">
+    <value>Do you want?</value>
+  </data>
+  <data name="GlLeave" xml:space="preserve">
+    <value>Leave</value>
+  </data>
+  <data name="GlLeaveCollage" xml:space="preserve">
+    <value>Leave Collage ?</value>
+  </data>
+  <data name="GlLeavePaint" xml:space="preserve">
+    <value>Leave Paint ?</value>
+  </data>
+  <data name="GlPressTheBackKeyAgain" xml:space="preserve">
+    <value>Press the back key again ! =^_^=</value>
+  </data>
+  <data name="CPDoubleTapToShowToolBar" xml:space="preserve">
+    <value>Double tap the image to show the toolbar.</value>
+  </data>
+  <data name="GlDontAskMeAgain" xml:space="preserve">
+    <value>Don't ask me again.</value>
+  </data>
+  <data name="GlRateViewString" xml:space="preserve">
+    <value>Give me 5 stars!More people use,more wonderful functions.Thank you!</value>
+  </data>
+  <data name="OPAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="OPGeneral" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="OPPotion" xml:space="preserve">
+    <value>Option</value>
+  </data>
+  <data name="OPRemoveAds" xml:space="preserve">
+    <value>Remove Ads</value>
+  </data>
+  <data name="OPBuyTheFullVersion" xml:space="preserve">
+    <value>Buy the full version</value>
+  </data>
+  <data name="OPBuyTheFullVersionDetail" xml:space="preserve">
+    <value>No ads,more service.</value>
+  </data>
+  <data name="OPMoreApps" xml:space="preserve">
+    <value>More apps</value>
+  </data>
+  <data name="OPWeAreHere" xml:space="preserve">
+    <value>We are here</value>
+  </data>
+  <data name="OPNetWorkErrors" xml:space="preserve">
+    <value>Network errors!Please check and try!</value>
+  </data>
+  <data name="OPTakeEffectAfterRestart" xml:space="preserve">
+    <value>It will take effect after the app restarted.</value>
+  </data>
+  <data name="MSettingAndAbout" xml:space="preserve">
+    <value>settings and about</value>
+  </data>
+  <data name="OPMoreAppsDetail" xml:space="preserve">
+    <value>more excellent apps</value>
+  </data>
+  <data name="GlImageHaveSavedTo" xml:space="preserve">
+    <value>Image saved to saved pictures album</value>
+  </data>
+  <data name="MInstallNow" xml:space="preserve">
+    <value>Install now?</value>
+  </data>
+  <data name="MItWillTakeEffectAtTheNextStart" xml:space="preserve">
+    <value>It will take effect at the next start!</value>
+  </data>
+  <data name="MYouHaveNotInstalledSketchBoard" xml:space="preserve">
+    <value>You have not installed "Sketch Board".</value>
+  </data>
+  <data name="ULAddLayer" xml:space="preserve">
+    <value>Add layer</value>
+  </data>
+  <data name="ULAddPicture" xml:space="preserve">
+    <value>Add picture</value>
+  </data>
+  <data name="ULMergeLayers" xml:space="preserve">
+    <value>Merge layers</value>
+  </data>
+  <data name="UCALayerHadBeenDeleted" xml:space="preserve">
+    <value>A layer had been deleted!</value>
+  </data>
+  <data name="UCOneLayerShouldBeKept" xml:space="preserve">
+    <value>At least one layer should be kept!</value>
+  </data>
+  <data name="CLClearOpacityMaskConfirm" xml:space="preserve">
+    <value>Opacity mask of current layer will be cleared.</value>
+  </data>
+  <data name="CLClearImageConfirm" xml:space="preserve">
+    <value>Image in current layer will be cleared.</value>
+  </data>
+
+  <data name="MVWordsSize" xml:space="preserve">
+    <value>Words Size</value>
+  </data>
+
+  <data name="MMovieFrame" xml:space="preserve">
+    <value>Movie Frame</value>
+  </data>
+
+  <data name="MFreeBegin" xml:space="preserve">
+    <value>Free Begin</value>
+  </data>
+
+  <data name="MFilter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+
+  <data name="MMaskCollage" xml:space="preserve">
+    <value>Collage</value>
+  </data>
+
+  <data name="EBrush" xml:space="preserve">
+    <value>Brush</value>
+  </data>
+
+  <data name="ETransparent" xml:space="preserve">
+    <value>Transparent</value>
+  </data>
+  <data name="ESave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="EClear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+
+  <data name="EMergeLayersConfirm" xml:space="preserve">
+    <value>Merge the all layers?</value>
+  </data>
+
+  <data name="ELayerGuideTip" xml:space="preserve">
+    <value>try to 'Hold' and 'Double Tap'</value>
+  </data>
+</root>

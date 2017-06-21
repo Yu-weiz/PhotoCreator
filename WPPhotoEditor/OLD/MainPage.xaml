@@ -1,0 +1,210 @@
+﻿<phone:PhoneApplicationPage
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+	xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:Coding4Fun_Phone_Controls="clr-namespace:Coding4Fun.Phone.Controls;assembly=Coding4Fun.Phone.Controls"	
+	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+	x:Class="WPPhotoEditor.OLD.MainPage"
+	FontFamily="{StaticResource PhoneFontFamilyNormal}"
+	FontSize="{StaticResource PhoneFontSizeNormal}"
+	Foreground="{StaticResource PhoneForegroundBrush}"
+	SupportedOrientations="Portrait" Orientation="Portrait"
+	shell:SystemTray.IsVisible="True">
+
+	<!--LayoutRoot is the root grid where all page content is placed-->
+	<Grid x:Name="LayoutRoot">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" MinHeight="704"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Canvas x:Name="grLayers" Height="640" VerticalAlignment="Top">
+			<Grid x:Name="grCanContainer" Width="480" Height="640" Background="{StaticResource PhoneBackgroundBrush}">
+				<Canvas x:Name="canLayers" Margin="0,0,0,64" Width="480" Height="640" d:LayoutOverrides="HorizontalMargin" Background="White">
+					<Border x:Name="brDrawingBoard" Width="480" Height="640" Background="Transparent"/>
+				</Canvas>
+				<Rectangle x:Name="recClip" Margin="155,243,0,0" Stroke="{StaticResource PhoneAccentBrush}" StrokeThickness="3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="206" Height="296" Fill="#42254EF1" Visibility="Collapsed"/>
+				<Grid x:Name="grCrop" Margin="0" Visibility="Collapsed" Background="#00000000" >
+					<Rectangle x:Name="rcCrop" Margin="0" Stroke="{StaticResource PhoneAccentBrush}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="200" StrokeThickness="2" Visibility="Collapsed"/>
+					<Ellipse x:Name="luEllipse" Fill="{StaticResource PhoneAccentBrush}" HorizontalAlignment="Left" Height="20" Stroke="Black" VerticalAlignment="Top" Width="20" Margin="0" Visibility="Collapsed"/>
+					<Ellipse x:Name="ldEllipse" Fill="{StaticResource PhoneAccentBrush}" HorizontalAlignment="Left" Height="20" Stroke="Black" VerticalAlignment="Top" Width="20" Margin="0" Visibility="Collapsed"/>
+					<Ellipse x:Name="ruEllipse" Fill="{StaticResource PhoneAccentBrush}" HorizontalAlignment="Left" Height="20" Stroke="Black" VerticalAlignment="Top" Width="20" Margin="0" Visibility="Collapsed"/>
+					<Ellipse x:Name="rdEllipse" Fill="{StaticResource PhoneAccentBrush}" HorizontalAlignment="Left" Height="20" Stroke="Black" VerticalAlignment="Top" Width="20" Margin="0" Visibility="Collapsed"/>
+					<TextBlock x:Name="tSize" Margin="71,0,0,0" TextWrapping="Wrap" Text="480*560" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" Visibility="Collapsed"/>
+				</Grid>
+
+			</Grid>
+		</Canvas>
+		<Border x:Name="brPen" BorderBrush="Black" BorderThickness="0" Margin="0,205,0,0" Background="White" Height="105" VerticalAlignment="Center" d:LayoutOverrides="Width" HorizontalAlignment="Center" Visibility="Collapsed">
+			<Ellipse x:Name="elPen" Margin="0" Stroke="Black" Width="100" Height="100" StrokeThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+		</Border>
+		<Grid x:Name="grLayersManager" Background="{StaticResource PhoneBackgroundBrush}" Height="62" VerticalAlignment="Bottom">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="0.152*"/>
+				<ColumnDefinition Width="0.759*"/>
+				<ColumnDefinition Width="0.152*"/>
+			</Grid.ColumnDefinitions>
+			<Coding4Fun_Phone_Controls:RoundButton x:Name="rbtDelLayer" Content="删除图层" VerticalAlignment="Stretch" Margin="0,4,0,2" ImageSource="ICO/appbar.delete.rest.png" d:LayoutOverrides="Width, Height" />
+			<Coding4Fun_Phone_Controls:RoundButton x:Name="rbtAddLay" Content="添加图层" VerticalAlignment="Stretch" Margin="0,4,0,2" ImageSource="ICO/appbar.add.rest.png" d:LayoutOverrides="Width, Height" Grid.Column="3"/>
+			<ListBox x:Name="lsLayers" Height="62" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="0" Grid.Column="1">
+				<ListBox.ItemsPanel>
+					<ItemsPanelTemplate>
+						<StackPanel  Orientation="Horizontal"/>						
+					</ItemsPanelTemplate>
+				</ListBox.ItemsPanel>
+			</ListBox>
+		</Grid>
+		<StackPanel x:Name="grToolDetail" Height="138" Margin="0" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Collapsed" >
+			<ListBox x:Name="lsBrushs" Height="70" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled" Background="White">
+				<ListBox.ItemsPanel>
+					<ItemsPanelTemplate>
+						<StackPanel  Orientation="Horizontal"/>						
+					</ItemsPanelTemplate>
+				</ListBox.ItemsPanel>
+				<Button x:Name="btDefaultPen" Content="" Height="69" Width="113" Margin="-10,0,0,0" BorderBrush="#FF1F1F1F">
+					<Button.Background>
+						<ImageBrush Stretch="Uniform" ImageSource="Brush/brPenICO.png"/>
+					</Button.Background>
+				</Button>
+				<Button x:Name="btBrStar" Content="" Height="69" Width="113" Margin="-20,0,0,0" BorderBrush="#FF1F1F1F">
+					<Button.Background>
+						<ImageBrush Stretch="Fill" ImageSource="Brush/brStar.png"/>
+					</Button.Background>
+				</Button>
+				<Button x:Name="btBrGrass" Content="" Height="69" Width="113" Margin="-17,0,0,0" BorderBrush="#FF1F1F1F">
+					<Button.Background>
+						<ImageBrush Stretch="Fill" ImageSource="Brush/brGrass.png"/>
+					</Button.Background>
+				</Button>
+				<Button x:Name="btBrGrape" Content="" Height="69" Width="113" Margin="-17,0,0,0" BorderBrush="#FF1F1F1F">
+					<Button.Background>
+						<ImageBrush Stretch="Fill" ImageSource="Brush/brGrape.png"/>
+					</Button.Background>
+				</Button>
+				<Button x:Name="btBrHand" Content="" Height="69" Width="113" Margin="-17,0,0,0" BorderBrush="#FF1F1F1F">
+					<Button.Background>
+						<ImageBrush Stretch="Fill" ImageSource="Brush/brHand.png"/>
+					</Button.Background>
+				</Button>
+				<Button x:Name="btBrFoot" Content="" Height="69" Width="113" Margin="-17,0,0,0" BorderBrush="#FF1F1F1F">
+					<Button.Background>
+						<ImageBrush Stretch="Fill" ImageSource="Brush/brFoot.png"/>
+					</Button.Background>
+				</Button>
+				<Button x:Name="btBrFootR" Content="" Height="69" Width="113" Margin="-17,0,0,0" BorderBrush="#FF1F1F1F">
+					<Button.Background>
+						<ImageBrush Stretch="Fill" ImageSource="Brush/brFootR.png"/>
+					</Button.Background>
+				</Button>
+				<Button x:Name="btBrBuffer" Content="" Height="69" Width="113" Margin="-17,0,0,0" BorderBrush="#FF1F1F1F">
+					<Button.Background>
+						<ImageBrush Stretch="Fill" ImageSource="Brush/brBuffer.png"/>
+					</Button.Background>
+				</Button>
+				<Button x:Name="btBrMusic" Content="" Height="69" Width="113" Margin="-17,0,0,0" BorderBrush="#FF1F1F1F">
+					<Button.Background>
+						<ImageBrush Stretch="Fill" ImageSource="Brush/brMusic.png"/>
+					</Button.Background>
+				</Button>
+				<Button x:Name="btBrFlower" Content="" Height="69" Width="113" Margin="-17,0,0,0" BorderBrush="#FF1F1F1F">
+					<Button.Background>
+						<ImageBrush Stretch="Fill" ImageSource="Brush/brFlower.png"/>
+					</Button.Background>
+				</Button>
+				<Button x:Name="btBrAmFoot" Content="" Height="69" Width="113" Margin="-17,0,0,0" BorderBrush="#FF1F1F1F">
+					<Button.Background>
+						<ImageBrush Stretch="Fill" ImageSource="Brush/brAmFoot.png"/>
+					</Button.Background>
+				</Button>
+				<Button x:Name="btBrTree" Content="" Height="69" Width="113" Margin="-17,0,0,0" BorderBrush="#FF1F1F1F">
+					<Button.Background>
+						<ImageBrush Stretch="Fill" ImageSource="Brush/brTree.png"/>
+					</Button.Background>
+				</Button>
+				<Button x:Name="btBrPoint" Content="" Height="69" Width="113" Margin="-10,0,0,0" BorderBrush="#FF1F1F1F">
+					<Button.Background>
+						<ImageBrush Stretch="Fill" ImageSource="Brush/brPoint.png"/>
+					</Button.Background>
+				</Button>
+				<Button x:Name="btBrPoint1" Content="" Height="69" Width="113" Margin="-10,0,0,0" BorderBrush="#FF1F1F1F">
+					<Button.Background>
+						<ImageBrush Stretch="Fill" ImageSource="Brush/WbmpOpacity.png"/>
+					</Button.Background>
+				</Button>
+				<Button x:Name="btBrPoint2" Content="" Height="69" Width="113" Margin="-10,0,0,0" BorderBrush="#FF1F1F1F">
+					<Button.Background>
+						<ImageBrush Stretch="Fill" ImageSource="Brush/brThinking.png"/>
+					</Button.Background>
+				</Button>
+			</ListBox>
+			<Grid x:Name="grAngle" Height="70" Margin="0" Background="{StaticResource PhoneBackgroundBrush}" Width="480">
+				<Slider x:Name="slAngle" Margin="77,3,71,-25" Height="92" Maximum="360"/>
+                <TextBlock x:Name="tAngle" HorizontalAlignment="Left" Margin="8,15,0,14" TextWrapping="Wrap" Width="66" Text="{Binding LocalizedResource.Angle, Source={StaticResource LocalizedStrings}}"/>
+                <Coding4Fun_Phone_Controls:RoundButton x:Name="rbtRefeshTrans" Content="{Binding LocalizedResource.Cancel, Source={StaticResource LocalizedStrings}}" Height="56" VerticalAlignment="Bottom" HorizontalAlignment="Right" ImageSource="ICO/appbar.refresh.rest.png" Margin="0,0,0,7"/>
+
+			</Grid>
+			<Grid x:Name="grClip" Height="74">
+				<TextBlock x:Name="tTest" Margin="76,22,76,18" TextWrapping="Wrap" Text="TextBlock" Visibility="Collapsed"/>
+
+				<Coding4Fun_Phone_Controls:RoundButton x:Name="rbtOKClip" Content="{Binding LocalizedResource.OK, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" Height="70" VerticalAlignment="Bottom" Margin="0,0,0,3"/>
+				<Coding4Fun_Phone_Controls:RoundButton x:Name="rbtCancleClip" Content="{Binding LocalizedResource.Cancel, Source={StaticResource LocalizedStrings}}" Height="70" VerticalAlignment="Bottom" HorizontalAlignment="Right" ImageSource="ICO/appbar.cancel.rest.png" Margin="0,0,0,2"/>
+			</Grid>
+			<Border x:Name="adGoogle" HorizontalAlignment="Left" VerticalAlignment="Stretch" >
+                <ADControls:AdUltimateBar x:Name="adUltimateBar2" xmlns:ADControls="clr-namespace:Yuweiz.Phone.Ad.Controls;assembly=Yuweiz.Phone.Ad"  HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed"/>
+
+                <!--<my:UCAds xmlns:my="clr-namespace:WPAdsRotator;assembly=WPAdsRotator" Height="80" x:Name="uCAds1" Width="480" />-->
+			</Border>
+
+		</StackPanel>
+		<ListBox x:Name="lsTools" Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="0" Background="{StaticResource PhoneBackgroundBrush}" VerticalAlignment="Bottom">
+			<ListBox.ItemsPanel>
+				<ItemsPanelTemplate>
+					<StackPanel  Orientation="Horizontal"/>						
+				</ItemsPanelTemplate>
+			</ListBox.ItemsPanel>
+			<Coding4Fun_Phone_Controls:RoundButton x:Name="rbtLayers" Content="画刷" VerticalAlignment="Stretch" Margin="0,4,0,5" ImageSource="ICO/layers.png"/>
+			<Coding4Fun_Phone_Controls:RoundButton x:Name="rbtBrush" Content="画刷" VerticalAlignment="Stretch" Margin="0,4,0,5" ImageSource="ICO/appbar.edit.rest.png" Foreground="White"/>
+			<Coding4Fun_Phone_Controls:RoundButton x:Name="rbtEraser" Content="旋转" VerticalAlignment="Stretch" Margin="0,4,0,5" ImageSource="ICO/Color.png"/>
+			<Coding4Fun_Phone_Controls:RoundButton x:Name="rbtZoom" Content="裁剪" VerticalAlignment="Stretch" Margin="0,4,0,5" ImageSource="ICO/WPDrawingZoom.png"/>
+			<Coding4Fun_Phone_Controls:RoundButton x:Name="rbtUndo" Content="Undo" VerticalAlignment="Stretch" Margin="0,4,0,5" ImageSource="ICO/appbar.back.rest.png"/>
+			<Coding4Fun_Phone_Controls:RoundButton x:Name="rbtRedo" Content="Redo" VerticalAlignment="Stretch" Margin="0,4,0,5" ImageSource="ICO/appbar.next.rest.png"/>
+			<Coding4Fun_Phone_Controls:RoundButton x:Name="rbtClear" Content="清空" VerticalAlignment="Stretch" Margin="0,4,0,5" ImageSource="ICO/WPDrawingNew.png"/>
+			<Coding4Fun_Phone_Controls:RoundButton x:Name="rbtClip" Content="裁剪" VerticalAlignment="Stretch" Margin="0,4,0,5" ImageSource="ICO/WPDrawingClip.png"/>
+			<Coding4Fun_Phone_Controls:RoundButton x:Name="rbtEffect" Content="特效" VerticalAlignment="Stretch" Margin="0,4,0,5" ImageSource="ICO/imagic.png" Visibility="Collapsed"/>
+			<Coding4Fun_Phone_Controls:RoundButton x:Name="rbtSave" Content="保存" VerticalAlignment="Stretch" Margin="0,4,0,5" ImageSource="ICO/appbar.save.rest.png"/>
+            <Coding4Fun_Phone_Controls:RoundButton x:Name="rbtSetting" Content="设置" VerticalAlignment="Stretch" Margin="0,4,0,5" ImageSource="ICO/appbar.feature.settings.rest.png"/>
+		</ListBox>
+		<StackPanel x:Name="grPenDetail" Margin="0,140,0,270" Orientation="Vertical" Visibility="Collapsed">
+			<Grid x:Name="grTransparency" Height="70" Background="{StaticResource PhoneBackgroundBrush}">
+                <TextBlock x:Name="tOpacity" TextWrapping="Wrap" Text="{Binding LocalizedResource.Transparency, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" Margin="4,18,0,5"/>
+				<Slider x:Name="slTransparency" Margin="121,0,0,-25" Maximum="255" Value="128"/>
+
+			</Grid>
+			<Grid x:Name="grPenSize" Height="70" Background="{StaticResource PhoneBackgroundBrush}">
+				<TextBlock TextWrapping="Wrap" Text="{Binding LocalizedResource.Size, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" Margin="4,18,0,5"/>
+				<Slider x:Name="slPenSize" Margin="121,0,0,-25" Maximum="200" Value="100"/>
+
+			</Grid>
+			<Grid x:Name="grHardness" Height="70" Background="{StaticResource PhoneBackgroundBrush}">
+				<TextBlock TextWrapping="Wrap" Text="{Binding LocalizedResource.Feather, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" Margin="4,18,0,5"/>
+				<Slider x:Name="slEclosion" Margin="121,0,0,-25" Maximum="1" Value="0.3"/>
+
+			</Grid>
+			<Grid x:Name="grSpacing" Height="70" Background="{StaticResource PhoneBackgroundBrush}">
+				<TextBlock TextWrapping="Wrap" Text="{Binding LocalizedResource.tSpacing, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" Margin="4,18,0,5"/>
+				<Slider x:Name="slSpacing" Margin="121,0,0,-25" Maximum="300" SmallChange="30" LargeChange="50"/>
+
+			</Grid>
+            <ADControls:AdUltimateBar x:Name="adUltimateBar" xmlns:ADControls="clr-namespace:Yuweiz.Phone.Ad.Controls;assembly=Yuweiz.Phone.Ad"  HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed"/>
+
+        </StackPanel>
+
+		<!--Google_AdMob_Ads_WindowsPhone7_WPF:BannerAd x:Name="adGoogle" d:LayoutOverrides="Width" Margin="0,0,0,-1" VerticalAlignment="Bottom" Height="65" d:IsHidden="True" AdUnitID="a14f323c95d4a45"/-->
+
+		<!--TitlePanel contains the name of the application and page title-->
+
+		<!--ContentPanel - place additional content here-->
+	</Grid>
+</phone:PhoneApplicationPage>

@@ -1,0 +1,49 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="WPPhotoEditor.Controls.UCBrushStyleBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Controls="clr-namespace:Coding4Fun.Toolkit.Controls;assembly=Coding4Fun.Toolkit.Controls"
+    xmlns:UControls="clr-namespace:WPPhotoEditor.UControls"
+  
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+
+    <Grid x:Name="LayoutRoot" Background="White" CacheMode="BitmapCache">
+        <Grid Margin="12,13,8,495">
+            <TextBlock HorizontalAlignment="Left" Height="34" TextWrapping="Wrap" Text="{Binding LocalizedResource.PSPPenStyle, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Width="187" Foreground="Black" Margin="0,-3,0,0"/>
+            <ListBox x:Name="lstBrush" HorizontalAlignment="Left" Height="70" Margin="0,39,0,0"  VerticalAlignment="Top" Width="480"  ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled" >
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel  Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+            <TextBlock HorizontalAlignment="Left" Height="40" Margin="2,135,0,0" TextWrapping="Wrap" Text="{Binding LocalizedResource.APSize, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Width="58" Foreground="Black"/>
+            <Slider x:Name="slSize" ValueChanged="slSize_ValueChanged" HorizontalAlignment="Left" Height="94" Margin="49,120,0,0" VerticalAlignment="Top" Width="411" BorderBrush="{x:Null}" Minimum="20" Maximum="200" SmallChange="2" LargeChange="10" Value="50"/>
+        </Grid>
+        <Grid Margin="11,236,-1,91">
+            <TextBlock x:Name="tPenToolName" HorizontalAlignment="Left" Height="40" Margin="2,0,0,0" TextWrapping="Wrap" Text="{Binding LocalizedResource.PSPColorPen, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Width="265" FontSize="29.333" Foreground="Black"/>
+            <Controls:ColorPicker x:Name="colorPicker" HorizontalAlignment="Left" Margin="122,59,0,0" VerticalAlignment="Top" Height="414" Width="331" Visibility="Collapsed"/>
+            <Grid x:Name="grOpacityOption" Margin="122,59,0,248" Visibility="Collapsed">
+                <TextBlock x:Name="tOptionName" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" Text="{Binding LocalizedResource.PSPTransparency, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Width="128" Foreground="Black"/>
+                <Slider x:Name="slOpacity" ValueChanged="slSize_ValueChanged" HorizontalAlignment="Left" Height="94" Margin="0,40,0,0" VerticalAlignment="Top" Width="348" Value="100" Maximum="254" SmallChange="1"/>
+            </Grid>
+            <Grid x:Name="grTools" Margin="0,58,360,0" Background="#FFFFBC2E">
+                <UControls:UCPenTool x:Name="ucPTColor" PenType="Color" HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top"/>
+                <UControls:UCPenTool x:Name="ucPTTransparency" PenType="Transparent" HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top"/>
+                <UControls:UCPenTool x:Name="ucPTOpacity" PenType="Opacity" HorizontalAlignment="Left" Margin="10,213,0,0" VerticalAlignment="Top"/>
+                <UControls:UCPenTool x:Name="ucPTOriginal" PenType="Original" HorizontalAlignment="Left" Margin="10,311,0,0" VerticalAlignment="Top"/>
+            </Grid>
+        </Grid>
+        <ADControls:AdUltimateBar x:Name="adUltimateBar" Visibility="Collapsed" xmlns:ADControls="clr-namespace:Yuweiz.Phone.Ad.Controls;assembly=Yuweiz.Phone.Ad" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+    </Grid>
+
+</phone:PhoneApplicationPage>

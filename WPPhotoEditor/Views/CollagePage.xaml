@@ -1,0 +1,49 @@
+﻿<phone:PhoneApplicationPage
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Controls="clr-namespace:Coding4Fun.Toolkit.Controls;assembly=Coding4Fun.Toolkit.Controls"
+    xmlns:UControls="clr-namespace:WPPhotoEditor.UControls"
+   xmlns:Controls1="clr-namespace:WPPhotoEditor.Controls" 
+    xmlns:Media="clr-namespace:WPPhotoEditor.Media"
+    x:Class="WPPhotoEditor.Views.CollagePage"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+
+
+    <!--LayoutRoot 是包含所有页面内容的根网格-->
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Media:LayerCanvaslBase x:Name="layersCanvas" Tap="layersCanvas_Tap" Background="White"  HorizontalAlignment="Left" Height="800" VerticalAlignment="Top" Width="480"/>
+        <UControls:UCLayerToolBar x:Name="ucLayerToolBar"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Controls1:UCPenStyleBoxControl x:Name="ucPenStyleBox" VerticalAlignment="Top" Visibility="Collapsed"/>
+
+    </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" Opacity="0.75" ForegroundColor="White" BackgroundColor="#9f2257">
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="Redo" Click="ApplicationBarMenuItemRedo_Click"/>
+                <shell:ApplicationBarMenuItem Text="Save" Click="ApplicationBarMenuItemSave_Click"/>
+                <shell:ApplicationBarMenuItem Text="Setting" Click="ApplicationBarMenuItemSetting_Click" />
+             </shell:ApplicationBar.MenuItems>
+
+            <shell:ApplicationBarIconButton 
+                IconUri="/Assets/AppBar/undo.png"   Click="ApplicationBarMenuItemUndo_Click" Text="Undo"
+                         IsEnabled="True" />
+            <shell:ApplicationBarIconButton 
+                IconUri="/Assets/AppBar/BrushTool_Effect.png"    Click="ApplicationBarMenuItemPenTool_Click" Text="Pen"
+                         IsEnabled="True" />
+            <shell:ApplicationBarIconButton
+                IconUri="/Assets/AppBar/cursor_hand_icon.png"   Click="ApplicationBarMenuItemTransfromTool_Click" Text="Drag"
+                         IsEnabled="False" />
+            <shell:ApplicationBarIconButton 
+                IconUri="/Assets/AppBar/add.png" Click="ApplicationBarMenuItemTakePhoto_Click" Text="Add"
+                         IsEnabled="True" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>
